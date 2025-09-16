@@ -1,10 +1,11 @@
 import React from 'react';
-import {useLoaderData, useParams } from 'react-router-dom';
+import {useLoaderData,  useParams } from 'react-router-dom';
 import { addToStoredList } from '../../utility/addToReadLs';
 import { addToWishlist } from '../../utility/addToWishlistLs';
 
 const BookDetails = () => {
-    const {bookId} = useParams();
+  
+  const {bookId} = useParams();
     const data = useLoaderData();
     console.log(data)
     const id = parseInt(bookId);
@@ -12,11 +13,13 @@ const BookDetails = () => {
     console.log(book)
     const {bookName, image,author,review,} = book;
     const handleAddToReadList = (id) =>{
-        addToStoredList(id)
+        addToStoredList(id);
+       
     }
 
     const handleAddToWishlist = (id) =>{
         addToWishlist(id)
+        
     }
     return (
         <div className='my-10'>
